@@ -1,0 +1,11 @@
+<select name="" id=""></select>
+<input #item type="text" name="item" id="item" placeholder = "Add your Grocery"
+    (keyup.enter) = 'addGrocery(item.value);item.value""'>
+
+<br>
+<p class = "count">{{groceries.length}} item added</p>
+<div *ngFor=" let g of groceries; let i = index">
+    <div [style.text-decoration] = 'check,checked? "line-through":""'></div>
+    &nbsp;
+    <input #check type="checkbox" [(ngModel)] = "g is purchased">
+</div>

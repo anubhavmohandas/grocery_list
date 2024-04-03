@@ -1,0 +1,67 @@
+// Just for Reference
+
+import { NgFor } from '@angular/common';
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [RouterOutlet, NgFor],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.css'
+})
+export class AppComponent {
+  title = 'grocery_list';
+  groceries:groceryItem = [] 
+  // [{'item': string, 'isPurchased': boolean}]
+  // can use priority too
+
+  addGrocery(grocery:string){
+    if(grocery){
+      console.clear();
+      grocery = grocery.charAt(0).toUpperCase() + grocery.slice(1);
+      // Not necesary
+      this.groceries.push ({item:grocery, isPurchased:false}) // Only we need to do this
+      // priority:this.priority
+
+      // this.groceries.sort((a,b) =>
+      // )a.prioroity.localCompare(b.priority)
+      // )a.item.localCompare(b.item)
+    }
+    // console.log(this.groceries)
+
+    deleteGrocery(i:number){
+      this.groceries.splice(i, 1);
+      // console.log(this.groceries)
+    }
+  }
+}
+
+// export class groceryComponent{
+//   constructor(
+//     public item:string, 
+//     public isPurchased:boolean,
+//     public priority: string) {}
+// }
+// or use export interface
+
+
+
+
+
+
+
+
+// HTML FILE:
+<select name="" id=""></select>
+<input #item type="text" name="item" id="item" placeholder = "Add your Grocery"
+    (keyup.enter) = 'addGrocery(item.value);item.value""'>
+
+<br>
+<p class = "count">{{groceries.length}} item added</p>
+<div *ngFor=" let g of groceries; let i = index">
+    <div [style.text-decoration] = 'check,checked? "line-through":""'></div>
+    &nbsp;
+    <input #check type="checkbox" [(ngModel)] = "g is purchased">
+</div>
