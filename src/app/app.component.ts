@@ -3,6 +3,11 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
 
+interface TaskItem {
+  name: string;
+  completed: boolean;
+}
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -11,14 +16,20 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  tasks: string[] = [];
+  tasks: TaskItem[] = [];
   newTask: string = '';
 
   addTask() {
-    if (this.newTask.trim()) { // Check if task is not empty
-      this.tasks.push(this.newTask);
-      // Clear the input field after adding the task
+    if (this.newTask.trim()) { 
+      this.tasks.push({name:this.newTask, completed:false});
       this.newTask = '';
+    };
+  }
+  ctcb(task: TaskItem){
+      task.completed = !task.completed;
     }
+  
+  ctcc(task: TaskItem){
+    task.completed = !task.completed;
   }
 }
