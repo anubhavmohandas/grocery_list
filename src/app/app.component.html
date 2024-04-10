@@ -1,14 +1,16 @@
 <h2>Grocery Shopping List</h2>
 
 <div class="container">
-  <!-- Input field for adding new tasks -->
-  <input type="text" #addtask placeholder="Add your Grocery" [(ngModel)]="newTask">
+  <div id="top">
+    <!-- Input field for adding new tasks -->
+    <input type="text" #addtask placeholder="Add your Grocery" [(ngModel)]="newTask">
 
-  <!-- Button to add new task -->
-  <button (click)="addTask()">Add Grocery</button>
+    <!-- Button to add new task -->
+    <button (click)="addTask()">Add Grocery</button>
 
-  <!-- Display total number of items -->
-  <p>Total Number of Items: {{ tasks.length }}</p>
+    <!-- Display total number of items -->
+    <p>Total Number of Items: {{ tasks.length }}</p>
+  </div>
 
   <!-- Display tasks -->
   <ul>
