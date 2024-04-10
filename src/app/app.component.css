@@ -1,4 +1,113 @@
-/* .checked {
-    text-decoration: line-through;
-  } */
+/* Global Styles */
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Container Styles */
+
+.container {
+  width: 500px;
+  margin: 20px auto;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #ffffffed;
+}
+
+/* Header Styles */
+
+h2 {
+  text-align: center;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+/* Grocery List Application Styles */
+
+/* Top Section Styles */
+
+#top {
+  padding: 20px;
+  text-align: center;
+}
+
+#top input[type="text"] {
+  width: 450px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+#top button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 3px;
+  background-color: #4CAF50;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  display: inline;
+}
+
+#top button:hover {
+  background-color: #45a049;
+}
+
+/* Bottom Section Styles */
+
+#bottom {
+  padding: 20px;
+  overflow-y: auto;
+  max-height: 300px;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  display: inline-block;
+  width: 50%;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+/* Button Styles */
+
+#btn {
+  display: inline-block;
+}
+
+#btn button {
+  padding: 5px 10px;
+  margin-left: 5px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+#btn button#check {
+  background-color: #4CAF50;
+  color: #fff;
+}
+
+#btn button#delete {
+  background-color: #f44336;
+  color: #fff;
+}
+
+#btn button:hover {
+  opacity: 0.8;
+}
