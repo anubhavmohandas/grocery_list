@@ -13,15 +13,17 @@
   </div>
 
   <!-- Display tasks -->
-  <ul>
-    <div id = "content" *ngFor="let task of tasks; let i = index">
-      <li [style.textDecoration]="task.completed ? 'line-through' : 'none'">
-        {{ task.name }}
-      </li>
-      <div id = "btn">
-        <button id = "check" (click)="ctcb(task)">Check</button>
-        <button id = "delete" (click)="deleteTask(i)">Delete</button>
-      </div>
-    </div>
-  </ul>
+  <div id="bottom">
+    <ul>
+        <div *ngFor="let task of tasks; let i = index">
+          <li [style.textDecoration]="task.completed ? 'line-through' : 'none'">
+            {{ task.name }}
+          </li>
+          <div id = "btn">
+            <button id = "check" (click)="ctcb(task)">Check</button>
+            <button id = "delete" (click)="deleteTask(i)">Delete</button>
+          </div>
+        </div>
+    </ul>
+  </div>
 </div>
